@@ -1,0 +1,1 @@
+using scanner and insputstreamreader:: http://stackoverflow.com/questions/9114861/special-characters-are-input-wrongly
