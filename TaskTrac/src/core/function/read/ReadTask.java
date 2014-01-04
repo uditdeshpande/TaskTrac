@@ -13,19 +13,23 @@ public class ReadTask implements Runnable{
 	public void run() {
 	try {
 		process_read=Runtime.getRuntime().exec("tasklist");
-		Scanner s=new Scanner(new InputStreamReader(process_read.getInputStream()));
+		Scanner task_scanner=new Scanner(new InputStreamReader(process_read.getInputStream()));
+	//first 4 lines are headers null lines and the system idle process variable.
+		task_scanner.next();task_scanner.next();task_scanner.next();task_scanner.next();
 		
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
+		
+		
+		} catch (IOException e) {
+		
 		e.printStackTrace();
-	}
+		}
 	
 	}
-/*
+
 	public static void main(String []args)
 	{
 		Thread t=new Thread(new ReadTask(),"mma");
 		t.start();
 	}
-*/
+
 }
