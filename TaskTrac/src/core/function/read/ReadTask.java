@@ -21,7 +21,7 @@ public class ReadTask implements Runnable{
 	/* Reads the tasklist from the command prompt command. Then this scanner class will differentiate the various parameters*/
 	public void run() {
 	try {
-		ser_file=new FileOutputStream("C:\\Users\\User\\git\\TaskTrac\\TaskTrac\\src\\core\\function\\read\\temp.txt");
+		ser_file=new FileOutputStream("src\\core\\function\\read\\temp.txt");
 		oout=new ObjectOutputStream(ser_file);
 		process_read=Runtime.getRuntime().exec("tasklist");
 		Scanner task_scanner=new Scanner(new InputStreamReader(process_read.getInputStream()));
