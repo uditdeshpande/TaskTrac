@@ -54,7 +54,7 @@ public class ReadTask implements Runnable{
 			if(task_scanner.hasNextDouble())
 			temp.setMem_usage(task_scanner.nextDouble());
 			task_scanner.nextLine();
-			System.out.println(temp.toString());
+			//System.out.println(temp.toString());
 			//add to array list
 			//tlist.task_list.add(temp);
 			oout.writeObject(temp);
@@ -81,12 +81,12 @@ public class ReadTask implements Runnable{
 	}
 	}
 
-	public static void main(String []args)
+/*	public static void main(String []args)
 	{
 		Thread t=new Thread(new ReadTask(),"mma");
 		t.start();
 		
 	}
 	
-
+*/
 }
