@@ -43,21 +43,23 @@ public class ReadTask implements Runnable{
 			*/
 			temp=new Task();
 			try{
-			if(task_scanner.hasNext())
-			temp.setImage_name(task_scanner.next());
-			if(task_scanner.hasNextInt())
-			temp.setPid(task_scanner.nextInt());
-			if(task_scanner.hasNext())
-			temp.setSession_name(task_scanner.next());
-			if(task_scanner.hasNextInt())
-			temp.setSession_no(task_scanner.nextInt());
-			if(task_scanner.hasNextDouble())
-			temp.setMem_usage(task_scanner.nextDouble());
-			task_scanner.nextLine();
-			//System.out.println(temp.toString());
-			//add to array list
-			//tlist.task_list.add(temp);
-			oout.writeObject(temp);
+			synchronized (task_scanner) {
+				if (task_scanner.hasNext())
+					temp.setImage_name(task_scanner.next());
+				if (task_scanner.hasNextInt())
+					temp.setPid(task_scanner.nextInt());
+				if (task_scanner.hasNext())
+					temp.setSession_name(task_scanner.next());
+				if (task_scanner.hasNextInt())
+					temp.setSession_no(task_scanner.nextInt());
+				if (task_scanner.hasNextDouble())
+					temp.setMem_usage(task_scanner.nextDouble());
+				task_scanner.nextLine();
+				//System.out.println(temp.toString());
+				//add to array list
+				//tlist.task_list.add(temp);
+				oout.writeObject(temp);
+			}
 			
 			}
 			catch (Exception e) {
